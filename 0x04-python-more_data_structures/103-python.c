@@ -1,5 +1,4 @@
 def square_matrix_simple(matrix=[]):
-	new_list = matrix.copy()
-	for i in range(len(matrix)):
-		new_list[i] = list(map(lambda x: x**2, matrix[i]))
-		return new_list
+	new_matrix = matrix[:]
+	new_matrix = [[val**2 for val in row] for row in matrix]
+	return new_matrix
