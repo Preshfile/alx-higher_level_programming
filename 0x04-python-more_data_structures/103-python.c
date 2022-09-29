@@ -1,4 +1,6 @@
-def square_matrix_simple(matrix=[]):
-	new_matrix = matrix[:]
-	new_matrix = [[val**2 for val in row] for row in matrix]
-	return new_matrix
+#!/usr/bin/python3
+# 2-uniq_add.py
+def uniq_add(my_list=[]):
+for x in set(my_list):
+        result += x
+    return (result)
