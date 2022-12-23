@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Script that lists all lists all `State`
-objects from the database `hbtn_0e_6_usa`.
+objects from the database `Alx-Holberton`.
 Arguments:
     mysql username (str)
     mysql password (str)
