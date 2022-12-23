@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that lists all `cities` in the `cities` table of `hbtn_0e_4_usa`
+Script that lists all `cities` in the `cities` table of `Alx-Holberton schools`
 where the city's state matches the argument `state name`.
 Arguments:
     mysql username (str)
