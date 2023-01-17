@@ -1,6 +1,6 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 
-import urllib.request
+import urllib.requesti
 
 if name == "main":
 req = urllib.request.Request("https://alx-intranet.hbtn.io/status")
