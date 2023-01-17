@@ -4,12 +4,9 @@
 found in the header of the response."""
 
 import sys
-from urllib.request import Request, urlopen
+import urllib.request
 
 url = sys.argv[1]
-
-request = Request(url)
-with urlopen(request) as response:
-    headers = dict(response.getheaders())
-    x_request_id = headers.get("X-Request-Id")
-    print(x_request_id)
+req = urllib.request.Request(url)
+with urllib.request.urlopen(req) as res:
+    print(dict(res.headers).get("X-Request-Id"))
