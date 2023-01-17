@@ -4,11 +4,12 @@
 found in the header of the response."""
 
 import sys
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 url = sys.argv[1]
 
-with urlopen(url) as response:
-    headers = response.info()
+request = Request(url)
+with urlopen(request) as response:
+    headers = dict(response.getheaders())
     x_request_id = headers.get("X-Request-Id")
     print(x_request_id)
