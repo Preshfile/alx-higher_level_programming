@@ -8,10 +8,7 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    response = requests.get(url)
+    target_url = sys.argv[1]
+    response = requests.get(target_url)
     request_id = response.headers.get("X-Request-Id")
-    if request_id:
-        print(request_id)
-    else:
-        print("No 'X-Request-Id' found in the response header.")
+    print(request_id)
