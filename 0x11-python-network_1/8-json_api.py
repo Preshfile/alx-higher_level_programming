@@ -8,17 +8,20 @@ If no letter is provided, sends q=""
 
 import sys
 import requests
-if name == "main":
-url = sys.argv[1]
-letter = "" if len(sys.argv) == 2 else sys.argv[2]
-payload = {"q": letter}
 
-r = requests.post(url, data=payload)
-try:
-    response = r.json()
-    if response == {}:
-        print("No result")
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
     else:
-        print("[{}] {}".format(response.get("id"), response.get("name")))
-except ValueError:
-    print("Not a valid JSON")
+        letter = ""
+    url = 'http://0.0.0.0:5000/search_user'
+    data = {'q': letter}
+    try:
+        response = requests.post(url, data=data)
+        json_response = response.json()
+        if json_response:
+            print("[{}] {}".format(json_response.get('id'), json_response.get('name')))
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
