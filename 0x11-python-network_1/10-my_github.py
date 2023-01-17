@@ -4,19 +4,13 @@
 (username and password) and uses the GitHub API to display your id
 """
 
+import getpass
 import requests
-import sys
+from requests.auth import HTTPBasicAuth
 
-username = sys.argv[1]
-token = sys.argv[2]
-
-# Use Basic Authentication with the personal access token
-response = requests.get('https://api.github.com/user', auth=(username, token))
-
-if response.status_code == 200:
-    # Get the id from the response JSON
-    user_id = response.json().get('id')
-    print(user_id)
-else:
-    print(None)
-
+if __name__ == "__main__":
+    username = input("Enter your GitHub username: ")
+    password = getpass.getpass(prompt="Enter your GitHub password: ")
+    auth = HTTPBasicAuth(username, password)
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
