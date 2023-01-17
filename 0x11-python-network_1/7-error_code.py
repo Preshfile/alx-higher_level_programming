@@ -8,11 +8,10 @@ with the letter as a parameter.
 
 import sys
 import requests
-
 if name == "main":
 url = sys.argv[1]
-req = requests.get(url)
-if req.status_code >= 400:
-print("Error code:", req.status_code)
+response = requests.get(url)
+if response.status_code >= 400:
+print("Error code: {}".format(response.status_code))
 else:
-print(req.text)
+print(response.text)
