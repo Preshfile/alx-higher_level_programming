@@ -3,16 +3,9 @@
 Usage: ./8-json_api.py <url> <letter>
 
 The letter is sent as the value of the variable q.
-If no letter is provided, sends q="".
+If no letter is provided, sends q=""
 """
 
-#!/usr/bin/python3
-"""Sends a POST request to a specified URL with a given letter as a parameter.
-Usage: ./8-json_api.py <url> <letter>
-
-The letter is sent as the value of the variable q.
-If no letter is provided, sends q="".
-"""
 import sys
 import requests
 if name == "main":
